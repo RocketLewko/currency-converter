@@ -1,0 +1,15 @@
+<h1>Kalkulator walut</h1>
+<date-picker />
+@if (exchangeRateTable$ | async; as exchangeRateTable) {
+<div class="components-container">
+  <section class="currency-form">
+    <currency-form [currencyData]="exchangeRateTable" />
+  </section>
+
+  <section class="currency-table">
+    <currency-table [currencyData]="exchangeRateTable" />
+  </section>
+</div>
+} @else {
+<no-data />
+}

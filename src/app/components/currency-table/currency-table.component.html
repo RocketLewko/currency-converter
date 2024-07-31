@@ -1,0 +1,27 @@
+<table class="currency-table">
+  <caption>
+    {{
+      getTitle()
+    }}
+  </caption>
+  <thead>
+    <tr>
+      <th scope="col">Nazwa waluty</th>
+      <th scope="col">Kod waluty</th>
+      <th scope="col">Kurs średni</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (rate of currencyData().rates; track rate.code) {
+    <tr>
+      <td>{{ rate.currency }}</td>
+      <td>{{ rate.code }}</td>
+      <td>{{ rate.mid | number : "1.4-4" }}</td>
+    </tr>
+    } @empty {
+    <tr>
+      <td colspan="3">Brak dostępnych danych walutowych.</td>
+    </tr>
+    }
+  </tbody>
+</table>

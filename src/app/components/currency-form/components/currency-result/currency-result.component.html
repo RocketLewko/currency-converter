@@ -1,0 +1,9 @@
+<p>
+  <strong>Wynik:</strong>
+  <span id="amount" aria-live="polite">
+    {{ conversionResult().amount | number : "1.2-2" }}
+  </span>
+  <span id="fromCurrency">{{ conversionResult().fromCurrency }}</span> =
+  <span id="result"> {{ conversionResult().result | number : "1.2-2" }} </span>
+  <span id="toCurrency"> {{ conversionResult().toCurrency }}</span>
+</p>

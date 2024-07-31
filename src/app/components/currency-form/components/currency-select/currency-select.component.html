@@ -1,0 +1,27 @@
+<div class="currency-select">
+  <label [for]="id()">{{ label() }}</label>
+  <select
+    [id]="id()"
+    [formControl]="control()"
+    required
+    aria-required="true"
+    [attr.aria-describedby]="id + 'Help ' + id + 'Error'"
+  >
+    <option value="" disabled selected aria-label="Select currency">
+      Wybierz walutę
+    </option>
+    @for (rate of rates(); track rate.code) {
+    <option [value]="rate.code">
+      {{ rate.currency | titlecase }} ({{ rate.code | uppercase }})
+    </option>
+    }
+  </select>
+  <div [id]="id + 'Help'" class="help-text">Wybierz walutę z listy.</div>
+  @if (control().invalid && (control().touched || control().dirty)) {
+  <div>
+    <small *if="control.errors?.['required']" [id]="id + 'Error'">
+      Wybór waluty jest wymagany.
+    </small>
+  </div>
+  }
+</div>

@@ -1,0 +1,22 @@
+.components-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+  .currency-table {
+    width: 65%;
+  }
+
+  .currency-form {
+    width: 35%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .currency-table,
+    .currency-form {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<form (ngSubmit)="setDate()" aria-labelledby="datePickerTitle">
+  <div class="date-picker">
+    <h2 id="datePickerTitle" class="sr-only">Wybierz datę</h2>
+    <label for="date">Wybierz datę</label>
+    <div>
+      <input
+        title="Data"
+        type="date"
+        id="date"
+        name="date"
+        [max]="maxDate"
+        [(ngModel)]="selectedDate"
+        class="date-picker-input"
+        aria-required="true"
+        aria-describedby="dateHelp"
+      />
+      <div id="dateHelp" class="sr-only">
+        Wprowadź datę w formacie {{ dateType }}
+      </div>
+      <button type="submit" aria-label="Zatwierdź wybraną datę">
+        Zatwierdź
+      </button>
+    </div>
+  </div>
+</form>

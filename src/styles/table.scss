@@ -1,0 +1,35 @@
+table {
+  border-collapse: collapse;
+  box-shadow: 0 0 0 1px $medium-grey;
+  border-style: hidden;
+  border-radius: 4px;
+}
+
+caption {
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: 600;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  border: 1px solid $medium-grey;
+}
+
+th {
+  background-color: $light-grey;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: $light-grey;
+}
+
+tr:hover {
+  background-color: $medium-grey;
+}

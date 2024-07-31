@@ -1,0 +1,13 @@
+@import "./../../../styles/variables";
+
+.date-picker {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    margin-top: 5px;
+  }
+}

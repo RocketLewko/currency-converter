@@ -1,0 +1,44 @@
+<div class="components-container">
+  <form [formGroup]="form" (ngSubmit)="convert()" aria-labelledby="formTitle">
+    <h2 id="formTitle" class="sr-only">Formularz przeliczania walut</h2>
+
+    <amount-input id="amount" [control]="amountControl" />
+
+    <currency-select
+      id="fromCurrency"
+      label="Z waluty:"
+      [control]="fromCurrencyControl"
+      [rates]="rates"
+    />
+
+    <div class="button-container">
+      <button
+        type="button"
+        (click)="onSwitchCurrencies()"
+        class="switch"
+        aria-label="Zamień waluty"
+      >
+        ⇄
+      </button>
+    </div>
+
+    <currency-select
+      id="toCurrency"
+      label="Na walutę:"
+      [control]="toCurrencyControl"
+      [rates]="rates"
+    />
+
+    <div class="button-container">
+      <button
+        type="submit"
+        class="submit"
+        [disabled]="form.invalid"
+        [attr.aria-disabled]="form.invalid"
+      >
+        Przelicz
+      </button>
+    </div>
+  </form>
+</div>
+<currency-result [conversionResult]="conversionResult" />
