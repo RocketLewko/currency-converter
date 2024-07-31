@@ -1,27 +1,42 @@
-# KalkulatorWalut
+### Aplikacja Przelicznika Walut NBP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+**Demo:** [Kalkulator Walut](https://currency-calculator-nbp.netlify.app/)
 
-## Development server
+### Opis projektu
+Aplikacja do przeliczania walut oparta na Angularze, zintegrowana z API Narodowego Banku Polskiego.
+Realizowana w dniu 31/07/2024
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Funkcje
+- Aktualne kursy walut z NBP
+- Wybór daty kursu walut
+- Przeliczanie kwot między różnymi walutami
 
-## Code scaffolding
+### Technologie
+- Angular 18.1.0
+- RxJS 7.8.0
+- TSLib 2.3.0
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Narzędzia developerskie
+- Angular DevKit 18.1.2
+- Angular CLI 18.1.2
+- Angular Compiler CLI 18.1.0
+- Typy Jasmine 5.1.0
+- Jasmine Core 5.1.0
+- Karma 6.4.0
+- Karma Chrome Launcher 3.2.0
+- Karma Coverage 2.2.0
+- Karma Jasmine 5.1.0
+- Karma Jasmine HTML Reporter 2.1.0
+- Prettier 3.3.3
+- TypeScript 5.5.2
 
-## Build
+### Uruchomienie wersji developerskiej
+```sh
+npm install
+npm start
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Plany rozwoju
+- SSR
+- Store
+- 100% pokrycie testami jednostkowymi
