@@ -26,15 +26,13 @@
       [controlValue]="toCurrencyControl"
       [rates]="rates" />
 
-    <div class="button-container">
-      <button
-        type="submit"
-        class="submit"
-        [disabled]="form.invalid"
-        [attr.aria-disabled]="form.invalid">
-        Przelicz
-      </button>
-    </div>
+    <button
+      type="submit"
+      class="submit"
+      [disabled]="form.invalid"
+      [attr.aria-disabled]="form.invalid">
+      Przelicz
+    </button>
+    <currency-result [conversionResult]="conversionResult" />
   </form>
 </div>
-<currency-result [conversionResult]="conversionResult" />

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 @Component({
-  selector: 'my-org-root',
+  selector: 'root',
   standalone: true,
   imports: [MainLayoutComponent],
   template: `<main-layout />`,

@@ -33,7 +33,7 @@ select {
   }
 }
 
-input[type='date'] {
+input[type="date"] {
   height: 40px;
   padding: 0 6px;
   border: 1px solid $medium-grey;
@@ -108,11 +108,12 @@ button {
   }
 
   &.switch {
-    background-color: $blue;
-    color: $white;
+    background-color: $white;
+    border: 1px solid $blue;
+    color: $blue;
 
     &:hover {
-      background-color: darken($blue, 10%);
+      background-color: darken($white, 10%);
     }
   }
 

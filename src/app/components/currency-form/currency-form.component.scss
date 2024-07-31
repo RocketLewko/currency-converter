@@ -1,4 +1,4 @@
-@import './../../../styles/variables';
+@import "./../../../styles/variables";
 
 .components-container {
   max-width: 100%;
@@ -7,7 +7,14 @@
   border: 1px solid $medium-grey;
   border-radius: 4px;
   background-color: $light-grey;
-  margin-top: 25px;
+
+  .switch {
+    margin-top: 12px;
+  }
+
+  .submit {
+    margin-top: 25px;
+  }
 
   @media (max-width: 768px) {
     display: flex;
@@ -17,10 +24,4 @@
       width: 100%;
     }
   }
-}
-
-.button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
 }
