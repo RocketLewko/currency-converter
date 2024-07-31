@@ -17,16 +17,19 @@ export class CurrenciesService {
   readonly exchangeRateTable$ = this.selectedDateSubject.pipe(
     distinctUntilChanged(),
     switchMap((date) => (date ? this.getExchangeRatesByDate(date) : this.getExchangeRates())),
-    map((rateTables) => rateTables[0]),
-    catchError(() => of(null))
+    map((rateTables) => (rateTables?.length ? rateTables[0] : null))
   );
 
-  getExchangeRates(): Observable<CurrencyRateTable[]> {
-    return this.http.get<CurrencyRateTable[]>(`${this.apiUrl}?format=json`);
+  getExchangeRates(): Observable<CurrencyRateTable[] | null> {
+    return this.http
+      .get<CurrencyRateTable[] | null>(`${this.apiUrl}?format=json`)
+      .pipe(catchError(() => of(null)));
   }
 
-  getExchangeRatesByDate(date: string): Observable<CurrencyRateTable[]> {
-    return this.http.get<CurrencyRateTable[]>(`${this.apiUrl}/${date}?format=json`);
+  getExchangeRatesByDate(date: string): Observable<CurrencyRateTable[] | null> {
+    return this.http
+      .get<CurrencyRateTable[] | null>(`${this.apiUrl}/${date}?format=json`)
+      .pipe(catchError(() => of(null)));
   }
 
   setSelectedDate(date: string): void {

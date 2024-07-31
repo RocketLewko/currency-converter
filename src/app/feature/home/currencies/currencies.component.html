@@ -3,7 +3,7 @@
 @if (exchangeRateTable$ | async; as exchangeRateTable) {
   <div class="components-container">
     <section class="currency-form">
-      <currency-form [currencyData]="exchangeRateTable" />
+      <currency-form [rates]="exchangeRateTable.rates" />
     </section>
 
     <section class="currency-table">

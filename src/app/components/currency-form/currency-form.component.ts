@@ -3,15 +3,11 @@ import {
   ChangeDetectorRef,
   Component,
   DestroyRef,
-  OnInit,
+  effect,
   inject,
   input,
 } from '@angular/core';
-import {
-  CurrencyConversionResult,
-  CurrencyRateDetail,
-  CurrencyRateTable,
-} from '@models/exchange-rate.interface';
+import { CurrencyConversionResult, CurrencyRateDetail } from '@models/exchange-rate.interface';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AmountInputComponent } from './components/amount-input/amount-input.component';
@@ -21,7 +17,6 @@ import { CurrencySelectComponent } from './components/currency-select/currency-s
 import { FORM_CONFIG } from './data/form-config';
 import { PLN_CURRENCY } from './data/pln-currency';
 import { convertCurrency } from '../utils/currency-convert';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'currency-form',
@@ -36,29 +31,26 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   styleUrls: ['./currency-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CurrencyFormComponent implements OnInit {
-  readonly currencyData = input.required<CurrencyRateTable>();
+export class CurrencyFormComponent {
+  readonly rates = input.required({
+    transform: (values: CurrencyRateDetail[]) => [PLN_CURRENCY, ...values],
+  });
+
   readonly destroyRef = inject(DestroyRef);
   readonly currenciesService = inject(CurrenciesService);
   readonly form = inject(FormBuilder).nonNullable.group(FORM_CONFIG);
   readonly changeDetectorRef = inject(ChangeDetectorRef);
 
-  rates: CurrencyRateDetail[] = [];
   conversionResult!: CurrencyConversionResult;
 
-  ngOnInit(): void {
-    this.currenciesService.exchangeRateTable$
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe((exchangeRateTable) => {
-        if (exchangeRateTable) {
-          this.rates = [PLN_CURRENCY, ...exchangeRateTable.rates];
-          this.convert();
-        }
-      });
+  constructor() {
+    effect(() => {
+      this.convert(this.rates());
+    });
   }
 
-  convert(): void {
-    const conversionResult = convertCurrency(this.rates, this.form.getRawValue());
+  convert(rates: CurrencyRateDetail[]): void {
+    const conversionResult = convertCurrency(rates, this.form.getRawValue());
     this.conversionResult = conversionResult;
     this.changeDetectorRef.detectChanges();
   }
