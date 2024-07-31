@@ -2,7 +2,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Injectable, inject } from '@angular/core';
 import { catchError, distinctUntilChanged, map, switchMap } from 'rxjs/operators';
 
-import { CurrencyRateTable } from '@models/exchange-rate.interface';
+import { CurrencyRateTable } from '@models/currency-rate.interface';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

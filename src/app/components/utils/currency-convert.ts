@@ -1,4 +1,4 @@
-import { CurrencyConversionResult, CurrencyRate } from '@models/exchange-rate.interface';
+import { CurrencyConversionResult, CurrencyRate } from '@models/currency-rate.interface';
 
 function findRate(rates: CurrencyRate[], code: string): number | undefined {
   return rates.find((rate) => rate.code === code)?.mid;

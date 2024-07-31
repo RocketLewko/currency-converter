@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 
-import { CurrencyRate } from '@models/exchange-rate.interface';
+import { CurrencyRate } from '@models/currency-rate.interface';
 
 @Component({
   selector: 'currency-select',

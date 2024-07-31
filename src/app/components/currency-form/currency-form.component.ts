@@ -7,7 +7,7 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { CurrencyConversionResult, CurrencyRateDetail } from '@models/exchange-rate.interface';
+import { CurrencyConversionResult, CurrencyRateDetail } from '@models/currency-rate.interface';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AmountInputComponent } from './components/amount-input/amount-input.component';
