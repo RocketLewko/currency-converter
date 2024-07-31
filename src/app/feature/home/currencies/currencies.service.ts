@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CurrenciesService {
-  private readonly apiUrl = 'http://api.nbp.pl/api/exchangerates/tables/A';
+  private readonly apiUrl = 'https://api.nbp.pl/api/exchangerates/tables/A';
   private readonly http = inject(HttpClient);
 
   private readonly selectedDateSubject = new BehaviorSubject<string>('');
