@@ -38,7 +38,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class CurrencyFormComponent implements OnInit {
   readonly currencyData = input.required<CurrencyRateTable>();
-
   readonly destroyRef = inject(DestroyRef);
   readonly currenciesService = inject(CurrenciesService);
   readonly form = inject(FormBuilder).nonNullable.group(FORM_CONFIG);
