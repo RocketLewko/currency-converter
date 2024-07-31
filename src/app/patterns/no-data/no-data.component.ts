@@ -1,9 +1,9 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'no-data',
   standalone: true,
-  imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './no-data.component.html',
   styleUrl: './no-data.component.scss',
 })

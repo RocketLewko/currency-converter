@@ -8,9 +8,7 @@ export default <Routes>[
       {
         path: '',
         loadComponent: () =>
-          import('./currencies/currencies.component').then(
-            (m) => m.CurrenciesComponent
-          ),
+          import('./currencies/currencies.component').then((m) => m.CurrenciesComponent),
       },
     ],
   },

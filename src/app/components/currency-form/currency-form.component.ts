@@ -7,21 +7,16 @@ import {
   inject,
   input,
 } from '@angular/core';
-import {
-  ConversionResult,
-  ExchangeRateTable,
-  Rate,
-} from '../../models/exchange-rate.interface';
+import { ConversionResult, ExchangeRateTable, Rate } from '../../models/exchange-rate.interface';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AmountInputComponent } from './components/amount-input/amount-input.component';
-import { CommonModule } from '@angular/common';
 import { CurrenciesService } from '../../feature/home/currencies/currencies.service';
 import { CurrencyResultComponent } from './components/currency-result/currency-result.component';
 import { CurrencySelectComponent } from './components/currency-select/currency-select.component';
 import { FORM_CONFIG } from './data/form-config';
 import { PLN_CURRENCY } from './data/pln-currency';
-import { convertCurrency } from '../../utils/currency-convert';
+import { convertCurrency } from '../utils/currency-convert';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -29,7 +24,6 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    CommonModule,
     CurrencySelectComponent,
     AmountInputComponent,
     CurrencyResultComponent,
@@ -40,6 +34,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 })
 export class CurrencyFormComponent implements OnInit {
   readonly currencyData = input.required<ExchangeRateTable>();
+
   readonly destroyRef = inject(DestroyRef);
   readonly currenciesService = inject(CurrenciesService);
   readonly form = inject(FormBuilder).nonNullable.group(FORM_CONFIG);
@@ -60,10 +55,7 @@ export class CurrencyFormComponent implements OnInit {
   }
 
   convert(): void {
-    const conversionResult = convertCurrency(
-      this.rates,
-      this.form.getRawValue()
-    );
+    const conversionResult = convertCurrency(this.rates, this.form.getRawValue());
     this.conversionResult = conversionResult;
     this.changeDetectorRef.detectChanges();
   }

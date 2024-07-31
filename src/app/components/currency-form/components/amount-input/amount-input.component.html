@@ -1,25 +1,25 @@
 <div class="amount-input">
+  @let control = controlValue();
+
   <label [for]="id()">Kwota:</label>
   <input
     type="number"
     [min]="1"
     [id]="id()"
-    [formControl]="control()"
+    [formControl]="control"
     required
     aria-required="true"
-    [attr.aria-describedby]="id + 'Help ' + id + 'Error'"
-  />
-  <div [id]="id + 'Help'" class="sr-only">
-    Wprowadź kwotę, którą chcesz przeliczyć.
-  </div>
-  @if (control().invalid && (control().touched || control().dirty)) {
-  <div>
-    <small *if="control().errors?.['required']" [id]="id + 'Error'">
-      Kwota jest wymagana.
-    </small>
-    <small *if="control().errors?.['min']" [id]="id + 'Error'">
-      Kwota musi być większa od zera.
-    </small>
-  </div>
+    [attr.aria-describedby]="id + 'Help ' + id + 'Error'" />
+  <div [id]="id + 'Help'" class="sr-only">Wprowadź kwotę, którą chcesz przeliczyć.</div>
+  @if (control.invalid && (control.touched || control.dirty)) {
+    <div>
+      @if (control.errors?.['required']) {
+        <small [id]="id + 'Error'"> Kwota jest wymagana. </small>
+      }
+
+      @if (control.errors?.['min']) {
+        <small [id]="id + 'Error'"> Kwota musi być większa od zera. </small>
+      }
+    </div>
   }
 </div>

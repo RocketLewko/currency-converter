@@ -13,15 +13,15 @@
   </thead>
   <tbody>
     @for (rate of currencyData().rates; track rate.code) {
-    <tr>
-      <td>{{ rate.currency }}</td>
-      <td>{{ rate.code }}</td>
-      <td>{{ rate.mid | number : "1.4-4" }}</td>
-    </tr>
+      <tr>
+        <td>{{ rate.currency }}</td>
+        <td>{{ rate.code }}</td>
+        <td>{{ rate.mid | number: '1.4-4' }}</td>
+      </tr>
     } @empty {
-    <tr>
-      <td colspan="3">Brak dostępnych danych walutowych.</td>
-    </tr>
+      <tr>
+        <td colspan="3">Brak dostępnych danych walutowych.</td>
+      </tr>
     }
   </tbody>
 </table>

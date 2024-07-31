@@ -1,10 +1,4 @@
-import {
-  DATE_COUNTRY,
-  DATE_TYPE,
-  TODAY,
-  dateFormatter,
-  getToday,
-} from './date-formatter';
+import { DATE_COUNTRY, DATE_TYPE, TODAY, dateFormatter, getToday } from './date-formatter';
 
 import { formatDate } from '@angular/common';
 

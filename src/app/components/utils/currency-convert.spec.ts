@@ -1,7 +1,4 @@
-import {
-  ConversionResult,
-  ExchangeRate,
-} from '../models/exchange-rate.interface';
+import { ConversionResult, ExchangeRate } from '../models/exchange-rate.interface';
 
 import { convertCurrency } from './currency-convert';
 
@@ -17,10 +14,7 @@ describe('convertCurrency', () => {
       toCurrency: 'EUR',
       amount: 100,
     };
-    const result: ConversionResult = convertCurrency(
-      mockExchangeRates,
-      exchangeForm
-    );
+    const result: ConversionResult = convertCurrency(mockExchangeRates, exchangeForm);
     expect(result).toEqual({
       fromCurrency: 'PLN',
       toCurrency: 'EUR',
@@ -31,10 +25,7 @@ describe('convertCurrency', () => {
 
   it('should return 0 result for zero amount', () => {
     const exchangeForm = { fromCurrency: 'USD', toCurrency: 'EUR', amount: 0 };
-    const result: ConversionResult = convertCurrency(
-      mockExchangeRates,
-      exchangeForm
-    );
+    const result: ConversionResult = convertCurrency(mockExchangeRates, exchangeForm);
     expect(result).toEqual({
       fromCurrency: 'USD',
       toCurrency: 'EUR',
@@ -49,10 +40,7 @@ describe('convertCurrency', () => {
       toCurrency: 'EUR',
       amount: 100,
     };
-    const result: ConversionResult = convertCurrency(
-      mockExchangeRates,
-      exchangeForm
-    );
+    const result: ConversionResult = convertCurrency(mockExchangeRates, exchangeForm);
     expect(result).toEqual({
       fromCurrency: 'USD',
       toCurrency: 'EUR',
@@ -67,10 +55,7 @@ describe('convertCurrency', () => {
       toCurrency: 'EUR',
       amount: 100,
     };
-    const result: ConversionResult = convertCurrency(
-      mockExchangeRates,
-      exchangeForm
-    );
+    const result: ConversionResult = convertCurrency(mockExchangeRates, exchangeForm);
     expect(result).toEqual({
       fromCurrency: 'USD',
       toCurrency: 'EUR',

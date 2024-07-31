@@ -1,8 +1,4 @@
-import {
-  ENVIRONMENT_INITIALIZER,
-  LOCALE_ID,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { LOCALE_ID, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import {
   Routes,
   provideRouter,
@@ -41,13 +37,9 @@ export function provideCore({ routes }: CoreOptions) {
       })
     ),
     {
-      provide: ENVIRONMENT_INITIALIZER,
-      multi: true,
-      useValue() {},
-    },
-    {
       provide: LOCALE_ID,
       useValue: 'pl',
+      multi: true,
     },
   ];
 }

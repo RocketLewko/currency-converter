@@ -5,6 +5,6 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
   selector: 'my-org-root',
   standalone: true,
   imports: [MainLayoutComponent],
-  template: `<my-org-main-layout />`,
+  template: `<main-layout />`,
 })
 export class AppComponent {}

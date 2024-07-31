@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { CurrenciesService } from './currencies.service';
 import { CurrencyFormComponent } from '../../../components/currency-form/currency-form.component';
 import { CurrencyTableComponent } from '../../../components/currency-table/currency-table.component';
@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
     DatePickerComponent,
     CurrencyFormComponent,
     NoDataComponent,
-    CommonModule,
+    AsyncPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './currencies.component.html',
