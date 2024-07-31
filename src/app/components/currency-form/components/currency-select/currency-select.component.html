@@ -16,7 +16,7 @@
     </option>
     }
   </select>
-  <div [id]="id + 'Help'" class="help-text">Wybierz walutę z listy.</div>
+  <div [id]="id + 'Help'" class="sr-only">Wybierz walutę z listy.</div>
   @if (control().invalid && (control().touched || control().dirty)) {
   <div>
     <small *if="control.errors?.['required']" [id]="id + 'Error'">

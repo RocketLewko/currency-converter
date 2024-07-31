@@ -3,6 +3,16 @@ input {
   border: 1px solid $medium-grey;
   border-radius: 4px;
   background-color: $white;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $lightest-grey;
+  }
+
+  &:focus {
+    outline: 2px solid $dark-yellow-focus;
+    outline-offset: 2px;
+  }
 }
 
 select {
@@ -11,15 +21,49 @@ select {
   border: 1px solid $medium-grey;
   border-radius: 4px;
   background-color: $white;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $lightest-grey;
+  }
+
+  &:focus {
+    outline: 2px solid $dark-yellow-focus;
+    outline-offset: 2px;
+  }
 }
 
-small {
-  color: $red;
+input[type="date"] {
+  height: 40px;
+  padding: 0 6px;
+  border: 1px solid $medium-grey;
+  border-radius: 4px;
+  background-color: $white;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $lightest-grey;
+  }
+
+  &:focus {
+    outline: 2px solid $dark-yellow-focus;
+    outline-offset: 2px;
+  }
 }
 
 label {
   font-weight: bold;
   margin-bottom: 5px;
+}
+
+small {
+  font-size: 0.875em;
+  color: $red;
+}
+
+:focus {
+  outline: 2px solid $dark-yellow-focus;
+  outline-offset: 2px;
 }
 
 button {
@@ -30,10 +74,26 @@ button {
   background-color: $blue;
   color: $white;
   cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+
+  &:focus {
+    outline: 2px solid $dark-yellow-focus;
+    outline-offset: 2px;
+  }
 
   &.submit {
     background-color: $blue;
     color: $white;
+
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
   }
 
   &.reset {
@@ -41,25 +101,25 @@ button {
     color: $red;
     border: 1px solid $red;
     margin-right: 10px;
+
+    &:hover {
+      background-color: lighten($red, 40%);
+    }
   }
 
   &.switch {
     background-color: $blue;
     color: $white;
+
+    &:hover {
+      background-color: darken($blue, 10%);
+    }
   }
 
   &:disabled {
     background-color: $grey;
     cursor: not-allowed;
   }
-}
-
-input[type="date"] {
-  height: 40px;
-  padding: 0 6px;
-  border: 1px solid $medium-grey;
-  border-radius: 4px;
-  background-color: $white;
 }
 
 .sr-only {

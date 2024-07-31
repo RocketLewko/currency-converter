@@ -9,7 +9,7 @@
     aria-required="true"
     [attr.aria-describedby]="id + 'Help ' + id + 'Error'"
   />
-  <div [id]="id + 'Help'" class="help-text">
+  <div [id]="id + 'Help'" class="sr-only">
     Wprowadź kwotę, którą chcesz przeliczyć.
   </div>
   @if (control().invalid && (control().touched || control().dirty)) {
