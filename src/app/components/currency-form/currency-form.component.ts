@@ -42,7 +42,6 @@ export class CurrencyFormComponent implements OnInit {
   readonly currencyData = input.required<ExchangeRateTable>();
   readonly destroyRef = inject(DestroyRef);
   readonly currenciesService = inject(CurrenciesService);
-  readonly fb = inject(FormBuilder);
   readonly form = inject(FormBuilder).nonNullable.group(FORM_CONFIG);
   readonly changeDetectorRef = inject(ChangeDetectorRef);
 
