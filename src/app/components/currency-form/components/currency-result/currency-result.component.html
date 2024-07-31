@@ -2,9 +2,9 @@
   @let result = conversionResult();
   <strong>Wynik:</strong>
   <span id="amount" aria-live="polite">
-    {{ result.amount | number: '1.2-2' }}
+    {{ result?.amount | number: '1.2-2' }}
   </span>
-  <span id="fromCurrency">{{ result.fromCurrency }}</span> =
-  <span id="result"> {{ result.result | number: '1.2-2' }} </span>
-  <span id="toCurrency"> {{ result.toCurrency }}</span>
+  <span id="fromCurrency">{{ result?.fromCurrency }}</span> =
+  <span id="result"> {{ result?.result | number: '1.2-2' }} </span>
+  <span id="toCurrency"> {{ result?.toCurrency }}</span>
 </p>

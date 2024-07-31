@@ -11,11 +11,11 @@ import {
   CurrencyConversionResult,
   CurrencyRateDetail,
   CurrencyRateTable,
-} from '../../models/exchange-rate.interface';
+} from '@models/exchange-rate.interface';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AmountInputComponent } from './components/amount-input/amount-input.component';
-import { CurrenciesService } from '../../feature/home/currencies/currencies.service';
+import { CurrenciesService } from '@feature/home/currencies/currencies.service';
 import { CurrencyResultComponent } from './components/currency-result/currency-result.component';
 import { CurrencySelectComponent } from './components/currency-select/currency-select.component';
 import { FORM_CONFIG } from './data/form-config';

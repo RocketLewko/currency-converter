@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DATE_TYPE, getToday } from '../utils/date-formatter';
 
-import { CurrenciesService } from '../../feature/home/currencies/currencies.service';
+import { CurrenciesService } from '@feature/home/currencies/currencies.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

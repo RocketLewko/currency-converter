@@ -21,5 +21,5 @@ export interface CurrencyConversionResult {
   toCurrency: string;
   fromCurrency: string;
   amount: number;
-  result: number;
+  result?: number;
 }

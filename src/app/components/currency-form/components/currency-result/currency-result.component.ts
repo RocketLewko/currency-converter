@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-import { CurrencyConversionResult } from '../../../../models/exchange-rate.interface';
+import { CurrencyConversionResult } from '@models/exchange-rate.interface';
 import { DecimalPipe } from '@angular/common';
 
 @Component({
