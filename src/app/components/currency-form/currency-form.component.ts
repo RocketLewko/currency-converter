@@ -7,7 +7,11 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { ConversionResult, ExchangeRateTable, Rate } from '../../models/exchange-rate.interface';
+import {
+  CurrencyConversionResult,
+  CurrencyRateDetail,
+  CurrencyRateTable,
+} from '../../models/exchange-rate.interface';
 import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { AmountInputComponent } from './components/amount-input/amount-input.component';
@@ -33,15 +37,15 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CurrencyFormComponent implements OnInit {
-  readonly currencyData = input.required<ExchangeRateTable>();
+  readonly currencyData = input.required<CurrencyRateTable>();
 
   readonly destroyRef = inject(DestroyRef);
   readonly currenciesService = inject(CurrenciesService);
   readonly form = inject(FormBuilder).nonNullable.group(FORM_CONFIG);
   readonly changeDetectorRef = inject(ChangeDetectorRef);
 
-  rates: Rate[] = [];
-  conversionResult!: ConversionResult;
+  rates: CurrencyRateDetail[] = [];
+  conversionResult!: CurrencyConversionResult;
 
   ngOnInit(): void {
     this.currenciesService.exchangeRateTable$

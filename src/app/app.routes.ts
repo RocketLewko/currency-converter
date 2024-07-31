@@ -1,13 +1,15 @@
+import { CurrenciesComponent } from './feature/home/currencies/currencies.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
+    component: MainLayoutComponent,
+    children: [{ path: '', component: CurrenciesComponent }],
   },
   {
-    path: 'home',
-    loadChildren: () => import('./feature/home/home.routes'),
+    path: '**',
+    redirectTo: '/',
   },
 ];

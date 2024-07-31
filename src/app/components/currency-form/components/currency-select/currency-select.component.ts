@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TitleCasePipe, UpperCasePipe } from '@angular/common';
 
-import { ExchangeRate } from '../../../../models/exchange-rate.interface';
+import { CurrencyRate } from '../../../../models/exchange-rate.interface';
 
 @Component({
   selector: 'currency-select',
@@ -16,5 +16,5 @@ export class CurrencySelectComponent {
   readonly id = input.required<string>();
   readonly label = input.required<string>();
   readonly controlValue = input.required<FormControl>();
-  readonly rates = input.required<ExchangeRate[]>();
+  readonly rates = input.required<CurrencyRate[]>();
 }

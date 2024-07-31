@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'root',
   standalone: true,
-  imports: [MainLayoutComponent],
-  template: `<main-layout />`,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet],
+  template: `<router-outlet />`,
 })
 export class AppComponent {}

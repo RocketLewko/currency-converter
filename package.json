@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:kalkulator-walut": "node dist/kalkulator-walut/server/server.mjs",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,css,scss,html,json,md}\""
   },
   "private": true,

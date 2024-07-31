@@ -1,23 +1,23 @@
-export interface ExchangeRate {
+export interface CurrencyRate {
   currency: string;
   code: string;
   mid: number;
 }
 
-export interface ExchangeRateTable {
+export interface CurrencyRateTable {
   table: string;
   no: string;
   effectiveDate: string;
-  rates: ExchangeRate[];
+  rates: CurrencyRate[];
 }
 
-export interface Rate {
+export interface CurrencyRateDetail {
   currency: string;
   code: string;
   mid: number;
 }
 
-export interface ConversionResult {
+export interface CurrencyConversionResult {
   toCurrency: string;
   fromCurrency: string;
   amount: number;

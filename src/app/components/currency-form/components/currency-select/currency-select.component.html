@@ -16,10 +16,10 @@
   </select>
   <div [id]="id + 'Help'" class="sr-only">Wybierz walutę z listy.</div>
   @if (control.invalid && (control.touched || control.dirty)) {
-    <div>
-      @if (control.errors?.['required']) {
+    @if (control.errors?.['required']) {
+      <div>
         <small [id]="id + 'Error'"> Wybór waluty jest wymagany. </small>
-      }
-    </div>
+      </div>
+    }
   }
 </div>

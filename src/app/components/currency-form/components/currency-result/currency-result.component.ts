@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-import { ConversionResult } from '../../../../models/exchange-rate.interface';
+import { CurrencyConversionResult } from '../../../../models/exchange-rate.interface';
 import { DecimalPipe } from '@angular/common';
 
 @Component({
@@ -12,5 +12,5 @@ import { DecimalPipe } from '@angular/common';
   styleUrl: './currency-result.component.scss',
 })
 export class CurrencyResultComponent {
-  readonly conversionResult = input.required<ConversionResult>();
+  readonly conversionResult = input.required<CurrencyConversionResult>();
 }

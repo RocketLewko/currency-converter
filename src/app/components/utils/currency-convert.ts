@@ -1,6 +1,6 @@
-import { ConversionResult, ExchangeRate } from '../../models/exchange-rate.interface';
+import { CurrencyConversionResult, CurrencyRate } from '../../models/exchange-rate.interface';
 
-function findRate(rates: ExchangeRate[], code: string): number | undefined {
+function findRate(rates: CurrencyRate[], code: string): number | undefined {
   return rates.find((rate) => rate.code === code)?.mid;
 }
 
@@ -13,14 +13,14 @@ function buildConversionResult(
   fromCurrency: string,
   toCurrency: string,
   result: number
-): ConversionResult {
+): CurrencyConversionResult {
   return { amount, fromCurrency, toCurrency, result };
 }
 
 export function convertCurrency(
-  exchangeRates: ExchangeRate[],
+  exchangeRates: CurrencyRate[],
   exchangeForm: { amount: number; fromCurrency: string; toCurrency: string }
-): ConversionResult {
+): CurrencyConversionResult {
   const { toCurrency, fromCurrency, amount } = exchangeForm;
 
   const fromRate = findRate(exchangeRates, fromCurrency);
