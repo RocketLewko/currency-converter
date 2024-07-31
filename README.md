@@ -38,5 +38,4 @@ npm start
 
 ### Plany rozwoju
 - SSR
-- Store
 - 100% pokrycie testami jednostkowymi
