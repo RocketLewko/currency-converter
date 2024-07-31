@@ -39,7 +39,6 @@ export function provideCore({ routes }: CoreOptions) {
     {
       provide: LOCALE_ID,
       useValue: 'pl',
-      multi: true,
     },
   ];
 }
